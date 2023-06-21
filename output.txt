@@ -1,0 +1,4 @@
+Ilość plików w katalogu '/home/mateusz/': 98706
+Waga katalogu '/home/mateusz/': 67G	/home/mateusz/
+67G	razem
+Suma wag wszystkich katalogów: 0

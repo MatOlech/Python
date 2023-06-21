@@ -1,0 +1,23 @@
+---
+- name: Przesyłanie i wdrażanie pliku WAR na serwerze
+  hosts: facility
+  become: yes
+  tasks:
+    - name: Wdrozenie aplikacji
+      command: service jboss force-stop
+      notify:
+        - Uruchomienie usługi JBoss
+
+    - name: Przesyłanie pliku WAR na serwer
+      copy:
+        src: /home/mateusz/Pobrane/expacs-dao-ws-1.3.5-2.17.war
+        dest: /opt/jboss/server/default/deploy/expacs-dao-ws-1.3.5-2.17.war
+  handlers:
+    - name: Uruchomienie usługi JBoss
+      service:
+        name: jboss
+        state: started
+
+    - name: Rozpakowanie pliku WAR
+      debug:
+        msg: "Plik WAR został rozpakowany."

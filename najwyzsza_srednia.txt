@@ -1,0 +1,3 @@
+Student 2: Jan Kowalski
+Oceny: 4 3 4 4 4 
+Średnia ocen: 3.8
